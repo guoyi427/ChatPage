@@ -24,6 +24,8 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
+        
         _headImageView = [[UIImageView alloc] init];
         _headImageView.backgroundColor = [UIColor redColor];
         [self.contentView addSubview:_headImageView];

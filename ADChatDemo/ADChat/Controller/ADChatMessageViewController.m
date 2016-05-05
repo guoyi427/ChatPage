@@ -12,6 +12,7 @@
 #import "ADChatSendCell.h"
 #import "ADChatReceiveCell.h"
 #import "ADChatTimeCell.h"
+#import "ADChatKeyboardToolView.h"
 
 //  Model
 #import "ADChatModel.h"
@@ -20,6 +21,7 @@
 {
     //  View
     UITableView *_tableView;
+    ADChatKeyboardToolView *_chatToolView;
     
     //  Model
     NSMutableArray *_chatModelList;
@@ -37,6 +39,7 @@ static NSString *Identifer_TimeCell = @"timeCell";
     self.view.backgroundColor = [UIColor redColor];
     [self _prepareTableView];
     [self _prepareChatModelList];
+    [self _prepareChatKeyboardToolView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -45,18 +48,6 @@ static NSString *Identifer_TimeCell = @"timeCell";
 }
 
 #pragma mark - Prepare
-
-- (void)_prepareTableView {
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)) style:UITableViewStylePlain];
-    _tableView.delegate = self;
-    _tableView.dataSource = self;
-    [_tableView registerClass:[ADChatSendCell class] forCellReuseIdentifier:Identifer_SendCell];
-    [_tableView registerClass:[ADChatReceiveCell class] forCellReuseIdentifier:Identifer_ReceiveCell];
-    [_tableView registerClass:[ADChatTimeCell class] forCellReuseIdentifier:Identifer_TimeCell];
-    _tableView.estimatedRowHeight = 80;
-    _tableView.rowHeight = UITableViewAutomaticDimension;
-    [self.view addSubview:_tableView];
-}
 
 - (void)_prepareChatModelList {
     _chatModelList = [[NSMutableArray alloc] init];
@@ -72,6 +63,24 @@ static NSString *Identifer_TimeCell = @"timeCell";
     
     [_tableView reloadData];
 }
+
+- (void)_prepareTableView {
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)) style:UITableViewStylePlain];
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
+    [_tableView registerClass:[ADChatSendCell class] forCellReuseIdentifier:Identifer_SendCell];
+    [_tableView registerClass:[ADChatReceiveCell class] forCellReuseIdentifier:Identifer_ReceiveCell];
+    [_tableView registerClass:[ADChatTimeCell class] forCellReuseIdentifier:Identifer_TimeCell];
+    _tableView.estimatedRowHeight = 80;
+    _tableView.rowHeight = UITableViewAutomaticDimension;
+    [self.view addSubview:_tableView];
+}
+
+- (void)_prepareChatKeyboardToolView {
+    _chatToolView = [ADChatKeyboardToolView toolView];
+    [self.view addSubview:_chatToolView];
+}
+
 
 #pragma mark - TableView - Delegate & Datasources
 
@@ -118,6 +127,12 @@ static NSString *Identifer_TimeCell = @"timeCell";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return _chatModelList.count;
+}
+
+#pragma mark - ScrollView - Delegate
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    [_chatToolView.textField resignFirstResponder];
 }
 
 @end

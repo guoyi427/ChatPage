@@ -25,6 +25,8 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
+        
         _headImageView = [[UIImageView alloc] init];
         _headImageView.backgroundColor = [UIColor redColor];
         [self.contentView addSubview:_headImageView];
@@ -53,7 +55,6 @@
             make.width.lessThanOrEqualTo(weakSelf.contentView).offset(-150);
             make.height.lessThanOrEqualTo(weakSelf.contentView).offset(-40);
         }];
-        
         
         [_bubbleImageView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(_headImageView.mas_right).offset(10);
