@@ -20,6 +20,7 @@
 		282E8B721CDA55E80070EEBB /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 282E8B651CDA55E80070EEBB /* NSArray+MASAdditions.m */; };
 		282E8B731CDA55E80070EEBB /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 282E8B681CDA55E80070EEBB /* NSLayoutConstraint+MASDebugAdditions.m */; };
 		282E8B741CDA55E80070EEBB /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 282E8B6A1CDA55E80070EEBB /* View+MASAdditions.m */; };
+		2844CBFE1CDB4BEF00388167 /* ADChatTimeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2844CBFD1CDB4BEF00388167 /* ADChatTimeCell.m */; };
 		289C52FB1CDA349B00350220 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 289C52FA1CDA349B00350220 /* main.m */; };
 		289C52FE1CDA349B00350220 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 289C52FD1CDA349B00350220 /* AppDelegate.m */; };
 		289C53011CDA349B00350220 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289C53001CDA349B00350220 /* ViewController.m */; };
@@ -82,6 +83,8 @@
 		282E8B691CDA55E80070EEBB /* View+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASAdditions.h"; sourceTree = "<group>"; };
 		282E8B6A1CDA55E80070EEBB /* View+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "View+MASAdditions.m"; sourceTree = "<group>"; };
 		282E8B6B1CDA55E80070EEBB /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		2844CBFC1CDB4BEE00388167 /* ADChatTimeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADChatTimeCell.h; sourceTree = "<group>"; };
+		2844CBFD1CDB4BEF00388167 /* ADChatTimeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADChatTimeCell.m; sourceTree = "<group>"; };
 		289C52F61CDA349B00350220 /* ADChatDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ADChatDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		289C52FA1CDA349B00350220 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		289C52FC1CDA349B00350220 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -166,6 +169,8 @@
 				282E8B4C1CDA4F9D0070EEBB /* ADChatReceiveCell.m */,
 				282E8B4E1CDA4FBB0070EEBB /* ADChatSendCell.h */,
 				282E8B4F1CDA4FBB0070EEBB /* ADChatSendCell.m */,
+				2844CBFC1CDB4BEE00388167 /* ADChatTimeCell.h */,
+				2844CBFD1CDB4BEF00388167 /* ADChatTimeCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -423,6 +428,7 @@
 				282E8B731CDA55E80070EEBB /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				282E8B6F1CDA55E80070EEBB /* MASLayoutConstraint.m in Sources */,
 				282E8B721CDA55E80070EEBB /* NSArray+MASAdditions.m in Sources */,
+				2844CBFE1CDB4BEF00388167 /* ADChatTimeCell.m in Sources */,
 				282E8B4D1CDA4F9D0070EEBB /* ADChatReceiveCell.m in Sources */,
 				282E8B531CDA51670070EEBB /* ADChatModel.m in Sources */,
 				289C53331CDA377800350220 /* AsyncSocket.m in Sources */,

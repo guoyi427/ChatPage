@@ -11,6 +11,7 @@
 //  View
 #import "ADChatSendCell.h"
 #import "ADChatReceiveCell.h"
+#import "ADChatTimeCell.h"
 
 //  Model
 #import "ADChatModel.h"
@@ -51,7 +52,7 @@ static NSString *Identifer_TimeCell = @"timeCell";
     _tableView.dataSource = self;
     [_tableView registerClass:[ADChatSendCell class] forCellReuseIdentifier:Identifer_SendCell];
     [_tableView registerClass:[ADChatReceiveCell class] forCellReuseIdentifier:Identifer_ReceiveCell];
-    [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:Identifer_TimeCell];
+    [_tableView registerClass:[ADChatTimeCell class] forCellReuseIdentifier:Identifer_TimeCell];
     _tableView.estimatedRowHeight = 80;
     _tableView.rowHeight = UITableViewAutomaticDimension;
     [self.view addSubview:_tableView];
@@ -64,7 +65,7 @@ static NSString *Identifer_TimeCell = @"timeCell";
         ADChatModel *model = [[ADChatModel alloc] init];
         model.content = @"的失联客机阿斯兰的减肥拉斯柯达家里看就发来上课都放假阿里的开始就法来得快激发了斯柯达放假阿里框架";
         model.messageType = 1;
-        model.cellType = i % 2 + 1;
+        model.cellType = i % 3 + 1;
         model.createTime = 10;
         [_chatModelList addObject:model];
     }
@@ -99,11 +100,13 @@ static NSString *Identifer_TimeCell = @"timeCell";
             break;
         case ADChatModelCellType_Time:
         {
-            UITableViewCell *timeCell = [tableView dequeueReusableCellWithIdentifier:Identifer_TimeCell];
+            ADChatTimeCell *timeCell = [tableView dequeueReusableCellWithIdentifier:Identifer_TimeCell];
+            [timeCell updateModel:model];
             
             cell = timeCell;
         }
             break;
+            
         default:
         {
             cell = [[UITableViewCell alloc] init];
