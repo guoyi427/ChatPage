@@ -24,6 +24,7 @@
 		2844CC011CDB52E600388167 /* ADChatKeyboardToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2844CC001CDB52E600388167 /* ADChatKeyboardToolView.m */; };
 		2844CC041CDB5E7E00388167 /* keyboard_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2844CC021CDB5E7E00388167 /* keyboard_1@2x.png */; };
 		2844CC051CDB5E7E00388167 /* keyboard_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2844CC031CDB5E7E00388167 /* keyboard_2@2x.png */; };
+		2848D74F1CE090C4006598C2 /* ADChatMediaKeyboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2848D74E1CE090C4006598C2 /* ADChatMediaKeyboardView.m */; };
 		289C52FB1CDA349B00350220 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 289C52FA1CDA349B00350220 /* main.m */; };
 		289C52FE1CDA349B00350220 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 289C52FD1CDA349B00350220 /* AppDelegate.m */; };
 		289C53011CDA349B00350220 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289C53001CDA349B00350220 /* ViewController.m */; };
@@ -92,6 +93,8 @@
 		2844CC001CDB52E600388167 /* ADChatKeyboardToolView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADChatKeyboardToolView.m; sourceTree = "<group>"; };
 		2844CC021CDB5E7E00388167 /* keyboard_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "keyboard_1@2x.png"; sourceTree = "<group>"; };
 		2844CC031CDB5E7E00388167 /* keyboard_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "keyboard_2@2x.png"; sourceTree = "<group>"; };
+		2848D74D1CE090C4006598C2 /* ADChatMediaKeyboardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADChatMediaKeyboardView.h; sourceTree = "<group>"; };
+		2848D74E1CE090C4006598C2 /* ADChatMediaKeyboardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADChatMediaKeyboardView.m; sourceTree = "<group>"; };
 		289C52F61CDA349B00350220 /* ADChatDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ADChatDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		289C52FA1CDA349B00350220 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		289C52FC1CDA349B00350220 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -180,6 +183,8 @@
 				2844CBFD1CDB4BEF00388167 /* ADChatTimeCell.m */,
 				2844CBFF1CDB52E600388167 /* ADChatKeyboardToolView.h */,
 				2844CC001CDB52E600388167 /* ADChatKeyboardToolView.m */,
+				2848D74D1CE090C4006598C2 /* ADChatMediaKeyboardView.h */,
+				2848D74E1CE090C4006598C2 /* ADChatMediaKeyboardView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -439,6 +444,7 @@
 				282E8B6E1CDA55E80070EEBB /* MASConstraintMaker.m in Sources */,
 				282E8B6D1CDA55E80070EEBB /* MASConstraint.m in Sources */,
 				282E8B731CDA55E80070EEBB /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				2848D74F1CE090C4006598C2 /* ADChatMediaKeyboardView.m in Sources */,
 				282E8B6F1CDA55E80070EEBB /* MASLayoutConstraint.m in Sources */,
 				282E8B721CDA55E80070EEBB /* NSArray+MASAdditions.m in Sources */,
 				2844CBFE1CDB4BEF00388167 /* ADChatTimeCell.m in Sources */,

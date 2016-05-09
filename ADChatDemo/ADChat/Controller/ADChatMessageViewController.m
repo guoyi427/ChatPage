@@ -132,7 +132,7 @@ static NSString *Identifer_TimeCell = @"timeCell";
 #pragma mark - ScrollView - Delegate
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
-    [_chatToolView.textField resignFirstResponder];
+    [_chatToolView hideKeyboard];
 }
 
 @end

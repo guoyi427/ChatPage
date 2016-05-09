@@ -12,8 +12,8 @@ static CGFloat Height_ToolBar = 50;
 
 @interface ADChatKeyboardToolView : UIView
 
-@property(nonatomic, strong) UITextField *textField;
-
 + (instancetype)toolView;
+
+- (void)hideKeyboard;
 
 @end

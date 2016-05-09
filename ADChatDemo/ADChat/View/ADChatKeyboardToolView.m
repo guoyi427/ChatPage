@@ -9,10 +9,13 @@
 #import "ADChatKeyboardToolView.h"
 
 #import "Masonry.h"
+#import "ADChatMediaKeyboardView.h"
 
-@interface ADChatKeyboardToolView ()
+@interface ADChatKeyboardToolView () <UITextFieldDelegate>
 {
     UIButton *_moreButton;
+    ADChatMediaKeyboardView *_mediaView;
+    UITextField *_textField;
 }
 @end
 
@@ -41,6 +44,7 @@
         [self addSubview:recorderButton];
         
         _textField = [[UITextField alloc] init];
+        _textField.delegate = self;
         [self addSubview:_textField];
         
         _moreButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -80,16 +84,61 @@
 
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+    if (_mediaView) {
+        [_mediaView removeFromSuperview];
+    }
+}
+
+#pragma mark - Public - Metods
+
+- (void)hideKeyboard {
+    [_textField resignFirstResponder];
+    if (_mediaView) {
+        [_mediaView removeFromSuperview];
+    }
+    
+    CGRect rect = self.frame;
+    rect.origin.y = CGRectGetHeight(self.superview.frame) - Height_ToolBar;
+    self.frame = rect;
 }
 
 #pragma mark - Button - Action
 
 - (void)recorderButtonAction {
-    
+ 
 }
 
 - (void)moreButtonAction {
     _moreButton.selected = !_moreButton.selected;
+    if (_moreButton.selected) {
+        //  显示媒体键盘 隐藏文字键盘
+        [_textField resignFirstResponder];
+        if (!_mediaView) {
+            _mediaView = [ADChatMediaKeyboardView mediaView];
+            [self.superview addSubview:_mediaView];
+        }
+        [_mediaView show];
+        
+        //  更新 toolView的frame
+        CGRect rect = self.frame;
+        rect.origin.y = [UIScreen mainScreen].bounds.size.height  - Height_MediaView - Height_ToolBar;
+        self.frame = rect;
+    } else {
+        //  显示文字键盘 隐藏媒体键盘
+        [_textField becomeFirstResponder];
+        if (_mediaView) {
+            [_mediaView removeFromSuperview];
+            _mediaView = nil;
+        }
+    }
+}
+
+#pragma mark - TextField - Delegate
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    _moreButton.selected = NO;
+    [_mediaView removeFromSuperview];
+    _mediaView = nil;
 }
 
 #pragma mark - Notification
